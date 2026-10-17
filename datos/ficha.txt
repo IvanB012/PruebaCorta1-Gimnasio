@@ -1,0 +1,18 @@
+FICHA DE LA PAREJA - Prueba Corta 1 - Carnes 208820443 y 208830343
+====================================================
+CASO     = 9 - Gimnasio
+PAIS     = CO
+EDAD     = 50
+ANIO     = 2024
+MONTO    = 150
+USUARIO  = u241   (clave Redis: sesion:u241)
+CODIGO DE INTEGRIDAD = 316164E0
+
+VOCABULARIO DE SU CASO (sustituya los nombres logicos del enunciado por estos):
+  clientes (tabla y coleccion)  ->  afiliados
+  pedidos (tabla)               ->  pagos
+  cliente_id (llave foranea)    ->  afiliado_id
+  monto (columna)               ->  monto
+  estado PAGADO / PENDIENTE / CANCELADO  ->  ACREDITADO / PENDIENTE / RECHAZADO
+
+Copie estos valores y el codigo de integridad en la portada de su informe.

@@ -1,0 +1,5 @@
+# Comandos de carga para su caso (Gimnasio). Ejecutelos dentro de esta carpeta.
+docker exec -i isw623_db psql -U estudiante -d laboratorio1 < postgres.sql
+docker cp afiliados.json isw623_mongo:/tmp/afiliados.json
+docker exec isw623_mongo mongoimport -u estudiante -p isw623 --authenticationDatabase admin --db pc1 --collection afiliados --drop --jsonArray --file /tmp/afiliados.json
+docker exec -i isw623_redis redis-cli < redis.txt
