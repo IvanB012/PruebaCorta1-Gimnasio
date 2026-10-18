@@ -1,0 +1,18 @@
+# A4 - Redis: sesion del afiliado u241, contador de visitas y expiracion
+# Ejecutar en: docker exec -it isw623_redis redis-cli
+
+# 1) Leer la sesion del afiliado (JSON con pais y carrito)
+GET sesion:u241
+
+# 2) Contador de visitas: valor inicial y cinco incrementos
+GET contador_visitas
+INCR contador_visitas
+INCR contador_visitas
+INCR contador_visitas
+INCR contador_visitas
+INCR contador_visitas
+GET contador_visitas
+
+# 3) Expiracion de la sesion en 120 segundos y consulta del TTL
+EXPIRE sesion:u241 120
+TTL sesion:u241

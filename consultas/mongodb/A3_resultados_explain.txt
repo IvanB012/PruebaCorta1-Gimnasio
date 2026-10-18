@@ -1,0 +1,18 @@
+A3 - Resultados de explain("executionStats") para la consulta de A1
+Consulta: db.afiliados.find({ pais: "CO", edad: { $gt: 50 }, activo: true })
+
+ANTES del indice (indices existentes: ["_id_"])
+winningPlan.stage    : COLLSCAN
+nReturned            : 229
+totalKeysExamined    : 0
+totalDocsExamined    : 6363
+executionTimeMillis  : 3
+
+DESPUES de db.afiliados.createIndex({ pais: 1, edad: 1 }) (indices: ["_id_","pais_1_edad_1"])
+winningPlan.stage    : FETCH -> IXSCAN (pais_1_edad_1)
+nReturned            : 229
+totalKeysExamined    : 269
+totalDocsExamined    : 269
+executionTimeMillis  : 1
+
+Reduccion de documentos examinados: ((6363 - 269) / 6363) x 100 = 95.77 %
